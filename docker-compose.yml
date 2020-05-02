@@ -1,0 +1,21 @@
+version: '3'
+services:
+  docker-mysql:
+    restart: always
+    container_name: docker-mysql
+    build: ./Lab3
+    ports:
+      - "6033:3306"
+    healthcheck:
+      test: "/usr/bin/mysql --user=root --password=my-secret-ps \"SHOW DATABASES;\""
+  lab6-app:
+    restart: on-failure
+    build: ./Lab6
+    expose:
+      - "10222"
+    ports:
+      - 10222:10222
+    environment:
+      WAIT_HOSTS: mysql:3306
+    depends_on:
+      - docker-mysql
