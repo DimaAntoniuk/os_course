@@ -3,12 +3,10 @@ services:
   docker-mysql:
     restart: always
     container_name: docker-mysql
-    command: --default-authentication-plugin=mysql_native_password
+    command: --default-authentication-plugin=mysql_native_password --network spring-boot-mysql
     build: ./Lab3
     ports:
       - "6033:3306"
-    healthcheck:
-      test: "/usr/bin/mysql --user=root --password=my-secret-ps \"SHOW DATABASES;\""
   lab6-app:
     restart: on-failure
     build: ./Lab6
