@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://docker-mysql:6033/antoniuk_db?serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://docker-mysql:3306/antoniuk_db?serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true
     username: root
     password: my-secret-ps
     driver-class-name: com.mysql.cj.jdbc.Driver

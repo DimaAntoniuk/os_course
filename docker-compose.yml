@@ -3,14 +3,14 @@ services:
   docker-mysql:
     restart: always
     container_name: docker-mysql
-    image: mysql
+    image: mysql:8
     command: --default-authentication-plugin=mysql_native_password
     volumes:
-      - ./Lab3/docker-mysql/db_lab_3.sql:/docker-entrypoint-init.d/db.sql
+      - ./Lab3/docker-mysql:/docker-entrypoint-initdb.d
     environment:
       MYSQL_ROOT_PASSWORD: my-secret-ps
     ports:
-      - 6033:3306
+      - 3306:3306
   lab6-app:
     restart: on-failure
     build: ./Lab6
