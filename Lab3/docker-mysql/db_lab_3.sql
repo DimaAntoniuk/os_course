@@ -85,7 +85,7 @@ CREATE TABLE antoniuk_db.price (
 CREATE TABLE antoniuk_db.panel_data (
   id INT NOT NULL AUTO_INCREMENT,
   `date` DATETIME NULL,
-  angel INT NULL,
+  angle INT NULL,
   power INT NULL,
   charge_level INT NULL,
   panel_id INT NOT NULL,
@@ -192,7 +192,7 @@ VALUES
 	(1, 2), (1, 3), (2, 3), (3, 3), (4, 3), (5, 2), (6, 2), (7, 1), (8, 2), (9, 3);
 
 
-INSERT INTO panel_data (`date`, angel, power, charge_level, panel_id)
+INSERT INTO panel_data (`date`, angle, power, charge_level, panel_id)
 VALUES
 	("2019-09-10 06:00:00", 60, 7, 10, 1), ("2019-09-10 09:00:00", 30, 7, 27, 1), ("2019-09-10 12:00:00", 10, 9, 100, 1),
     ("2019-09-10 15:00:00", -10, 8, 100, 1), ("2019-09-10 18:00:00", -30, 7, 100, 1), ("2019-09-10 21:00:00", -60, 7, 100, 1),
